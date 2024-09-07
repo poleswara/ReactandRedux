@@ -1,14 +1,14 @@
-import { createStore, combineReducers } from "redux";
+import { combineReducers } from "redux";
 import { configureStore } from "@reduxjs/toolkit";
-import { Studentreducer } from "../reducers/StudentReducer";
+import { FarmerReducer } from "../reducers/FarmerReducer";
 
 const rootReducer = combineReducers({
-  student: Studentreducer,
+  farmer: FarmerReducer,
 });
 
-// const store = createStore(rootReducer);
+// const store = createStore(rootReducer); createStore
 const store = configureStore({
-  reducer:rootReducer
-})
+  reducer: rootReducer,
+});
 
 export default store;
