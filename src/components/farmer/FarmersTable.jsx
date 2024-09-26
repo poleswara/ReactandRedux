@@ -54,7 +54,7 @@ const FarmersTable = () => {
           </tbody>
         </table>
       ) : (
-        <p>No students available</p>
+        <p>No farmers available</p>
       )}
     </>
   );

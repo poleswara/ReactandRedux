@@ -10,22 +10,24 @@
   
   form label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 3px;
     font-weight: bold;
     color: #333;
   }
-  
+
+  form input[type="date"],
   form input[type="text"],
   form input[type="number"] {
     width: 100%;
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 14px;
   }
   
+  form input[type="date"]:focus,
   form input[type="text"]:focus,
   form input[type="number"]:focus {
     border-color: #007bff;

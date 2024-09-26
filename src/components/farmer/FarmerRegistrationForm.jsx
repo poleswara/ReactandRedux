@@ -1,32 +1,16 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addFarmerHandler,
   farmerHandler,
 } from "../../redux/actions/StudetActions/FarmerAction";
-import { userDetails } from "../../services/service";
 import "../../style.css";
 import "./FarmerRegistration.css";
 
 const FarmerRegistrationForm = () => {
   const state = useSelector((state) => state.farmer);
   const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   let isMounted = true;
-  //   const userDetailsHandler = async () => {
-  //     try {
-  //       let data = await userDetails();
-  //       addFarmerHandler(data);
-  //     } catch (err) {
-  //       console.log("err", err);
-  //     }
-  //   };
-  //   userDetailsHandler();
-  //   return () => {
-  //     isMounted = false;
-  //   };
-  // }, []);
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -45,22 +29,6 @@ const FarmerRegistrationForm = () => {
       price: state.price,
     };
     dispatch(addFarmerHandler(farmerDetails));
-    // const studentInfo = {
-    //   name: state.mobile,
-    //   data: {
-    //     year: state.data.year,
-    //     price: state.data.price,
-    //     "CPU model": state.data["CPU model"],
-    //     "Hard disk size": state.data["Hard disk size"],
-    //   },
-    // };
-    // studentMobileInformation(studentInfo)
-    //   .then((data) => {
-    //     console.log("ddddddddddddddddddd", data.status);
-    //   })
-    //   .catch((err) => {
-    //     console.log("errrrr", err);
-    //   });
   };
 
   return (
@@ -103,7 +71,7 @@ const FarmerRegistrationForm = () => {
         />
         <label>Crop Year</label>
         <input
-          type="text"
+          type="date"
           name="cropyear"
           value={state.cropyear}
           onChange={(e) => handleChange(e)}
