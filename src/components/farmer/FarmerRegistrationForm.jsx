@@ -1,20 +1,22 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  addFarmerHandler,
-  farmerHandler,
-} from "../../redux/actions/StudetActions/FarmerAction";
+// import {
+//   addFarmerHandler,
+//   farmerHandler,
+// } from "../../redux/actions/StudetActions/FarmerAction";
+import { setVal, addFarmer } from "../../redux/createslice/FarmerSlice";
 import "../../style.css";
 import "./FarmerRegistration.css";
+import FarmersTable from "./FarmersTable";
 
 const FarmerRegistrationForm = () => {
   const state = useSelector((state) => state.farmer);
   const dispatch = useDispatch();
-  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    dispatch(farmerHandler("SET_VAL", name, value));
+    // dispatch(farmerHandler("SET_VAL", name, value));
+    dispatch(setVal({field:name, value}));
   };
 
   const handleSubmit = (e) => {
@@ -28,7 +30,8 @@ const FarmerRegistrationForm = () => {
       cropyear: state.cropyear,
       price: state.price,
     };
-    dispatch(addFarmerHandler(farmerDetails));
+    // dispatch(addFarmerHandler(farmerDetails));
+    dispatch(addFarmer(farmerDetails));
   };
 
   return (
@@ -85,6 +88,7 @@ const FarmerRegistrationForm = () => {
         />
         <button type="submit">Submit</button>
       </form>
+      <FarmersTable />
     </>
   );
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteFarmer } from '../../redux/actions/StudetActions/FarmerAction';
+// import { deleteFarmer } from '../../redux/actions/StudetActions/FarmerAction';
+import { deleteFarmer } from '../../redux/createslice/FarmerSlice';
 
 const FarmersTable = () => {
   const farmers = useSelector((state) => state.farmer.farmers);

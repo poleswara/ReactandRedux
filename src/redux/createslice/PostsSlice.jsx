@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { userDetails } from "../../services/service";
 
 const postsSlice = createSlice({
-  name: "posts",
+  name: "posts", 
   initialState: {
     posts: [],
     status: "idel",

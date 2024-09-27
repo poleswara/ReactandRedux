@@ -1,7 +1,8 @@
 // import { combineReducers } from "redux";
 import { configureStore } from "@reduxjs/toolkit";
-import { FarmerReducer } from "../reducers/FarmerReducer";
-import postsSlice  from "../createslice/Posts";
+// import { FarmerReducer } from "../reducers/FarmerReducer";
+import postsSlice from "../createslice/PostsSlice";
+import FarmerSlice from "../createslice/FarmerSlice";
 
 // const rootReducer = combineReducers({
 //   farmer: FarmerReducer,
@@ -11,7 +12,7 @@ import postsSlice  from "../createslice/Posts";
 const store = configureStore({
   // reducer: rootReducer,
   reducer : {
-    farmer: FarmerReducer,
+    farmer: FarmerSlice,
     post : postsSlice,
   }
 });
