@@ -1,4 +1,4 @@
-// import { combineReducers } from "redux";
+// import { createStore, combineReducers } from "redux";
 import { configureStore } from "@reduxjs/toolkit";
 // import { FarmerReducer } from "../reducers/FarmerReducer";
 import postsSlice from "../createslice/PostsSlice";
@@ -8,7 +8,7 @@ import FarmerSlice from "../createslice/FarmerSlice";
 //   farmer: FarmerReducer,
 // });
 
-// const store = createStore(rootReducer); createStore
+// const store = createStore(rootReducer);
 const store = configureStore({
   // reducer: rootReducer,
   reducer : {
