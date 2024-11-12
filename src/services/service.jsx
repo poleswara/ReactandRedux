@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const userDetails = createAsyncThunk( 'posts/fetchPosts',async () => {
+const userDetails = createAsyncThunk("posts/fetchPosts", async () => {
   // try {
   //   let res = await axios({
   //     method: "GET",
@@ -14,9 +14,26 @@ const userDetails = createAsyncThunk( 'posts/fetchPosts',async () => {
   // } catch (error) {
   //   return error;
   // }
-  const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
+  const response = await axios.get(
+    "https://jsonplaceholder.typicode.com/posts"
+  );
   return response.data;
 });
+
+const postDetails = createAsyncThunk(
+  "form/submitForm",
+  async (formData, { rejectWithValue }) => {
+    try {
+      const response = await axios.post(
+        "https://jsonplaceholder.typicode.com/posts",
+        formData
+      );
+      return response.data;
+    } catch (err) {
+      rejectWithValue(err.response.data);
+    }
+  }
+);
 
 const studentMobileInformation = (data) => {
   return new Promise(async (resolve, reject) => {
@@ -26,7 +43,7 @@ const studentMobileInformation = (data) => {
         "Content-Type": "application/json",
       },
       url: "https://api.restful-api.dev/objects",
-      data:data
+      data: data,
     })
       .then((res) => {
         return resolve(res);
@@ -37,4 +54,4 @@ const studentMobileInformation = (data) => {
   });
 };
 
-export { userDetails, studentMobileInformation };
+export { userDetails, postDetails, studentMobileInformation };

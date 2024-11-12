@@ -8,6 +8,7 @@ import { setVal, addFarmer } from "../../redux/createslice/FarmerSlice";
 import "../../style.css";
 import "./FarmerRegistration.css";
 import FarmersTable from "./FarmersTable";
+import { postDetails } from "../../services/service";
 
 const FarmerRegistrationForm = () => {
   const state = useSelector((state) => state.farmer);
@@ -32,6 +33,7 @@ const FarmerRegistrationForm = () => {
     };
     // dispatch(addFarmerHandler(farmerDetails));
     dispatch(addFarmer(farmerDetails));
+    dispatch(postDetails(farmerDetails))
   };
 
   return (
