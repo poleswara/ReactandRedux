@@ -17,7 +17,7 @@ const FarmerRegistrationForm = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     // dispatch(farmerHandler("SET_VAL", name, value));
-    dispatch(setVal({field:name, value}));
+    dispatch(setVal({name, value}));
   };
 
   const handleSubmit = (e) => {

@@ -20,7 +20,7 @@ const farmerSlice = createSlice({
   initialState,
   reducers: {
     setVal: (state, action) => {
-      state[action.payload.field] = action.payload.value;
+      state[action.payload.name] = action.payload.value;
     },
     addFarmer: (state, action) => {
       state.farmers.push(action.payload);

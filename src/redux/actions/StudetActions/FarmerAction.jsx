@@ -1,4 +1,4 @@
-export const farmerHandler = (val,field, payload) => ({
+export const farmerHandler = (val, field, payload) => ({
   type: val,
   field,
   payload,
@@ -10,6 +10,6 @@ export const addFarmerHandler = (farmerDetails) => ({
 });
 
 export const deleteFarmer = (index) => ({
-    type: 'DELETE_FARMER',
-    payload: index,
-  });
+  type: "DELETE_FARMER",
+  payload: index,
+});
